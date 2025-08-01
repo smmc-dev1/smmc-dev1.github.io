@@ -159,22 +159,34 @@ and uses the memory classifier to retain only task-relevant parts, effectively e
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-            <figure class="image">
-              <!-- Replace this with your actual diagram image -->
-              <img src="static/images/smam-framework.png" alt="Framework diagram of PIE-G">
-            </figure>
+    <div class="columns is-centered is-vcentered">
+      <!-- First Image and Caption -->
+      <div class="column">
+        <figure class="image">
+          <!-- Replace this with your actual diagram image -->
+          <img src="static/images/smam-framework.png" alt="Framework diagram of SMMC">
+          <figcaption class="has-text-centered mt-4">
+            <strong>The overall structure of SMMC.</strong> SMMC employs a pre-trained visual segmentation model to decompose training observations into multiple image patches. After segmentation, SMMC computes saliency maps to distinguish between task-relevant and irrelevant patches, which are subsequently labeled and stored in a memory tank. In the test, SMMC first segments test observations with SAM, then utilizes the memory classifier to select the patches that are most likely to contain task-relevant information, and masks out other patches (into black), thus excluding the task-irrelevant information.
+          </figcaption>
+        </figure>
+      </div>
+      <!-- Second Image and Caption -->
+      <div class="column">
+        <figure class="image">
+          <!-- Replace this with your second diagram image -->
+          <img src="static/images/salency-extract.jpg" alt="Second diagram">
+          <figcaption class="has-text-centered mt-4">
+            Extracting task-relevant patches through segmentation and saliency map in the training process
+          </figcaption>
+        </figure>
       </div>
     </div>
-    <p>
-      <strong>The overall structure of SMMC.</strong> SMMC employs a pre-trained visual segmentation model to decompose training observations into multiple image patches. After segmentation, SMMC computes saliency maps to distinguish between task-relevant and irrelevant patches, which are subsequently labeled and stored in a memory tank. In the test, SMMC first segments test observations with SAM, then utilizes the memory classifier to select the patches that are most likely to contain task-relevant information, and masks out other patches (into black), thus excluding the task-irrelevant information.
-    </p>
   </div>
 </section>
+
+
 
 
 <section class="section hero is-light">
